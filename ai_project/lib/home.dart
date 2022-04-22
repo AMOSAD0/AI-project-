@@ -132,15 +132,21 @@ class _HomePagState extends State<HomePag> {
            //  color: Colors.red,
              child:InkWell(
                onTap: () {
-                 selectR=true;
+                 setState(() {
+                   selectR=true;
                  selectB=false;
                  selectY=false;
+                 R=Colors.red.shade300;
+                 B=Colors.blue;
+                 Y=Colors.yellow;
                  print(selectR);
+                 });
+                 
                },
                child: Container(
                  height: 3.h,
                  width: 25.w,
-                 color: Colors.red,
+                   color: R,   
                ),
              ) ,
           ),
@@ -151,15 +157,21 @@ class _HomePagState extends State<HomePag> {
            //  color: Colors.red,
              child:InkWell(
                onTap: () {
-                 selectB=true;
+                 setState(() {
+                   selectB=true;
+                  B=Colors.blue.shade300;
+                  R=Colors.red;
+                  Y=Colors.yellow;
                  selectR=false;
                  selectY=false;
                  print(selectB);
+                 });
+                 
                },
                child: Container(
                  height: 3.h,
                  width: 20.w,
-                 color: Colors.blue,
+                 color: B,
                ),
              ) ,
           ),
@@ -170,15 +182,21 @@ class _HomePagState extends State<HomePag> {
            //  color: Colors.red,
              child:InkWell(
                onTap: () {
-                 selectY=true;
+                 setState(() {
+                   selectY=true;
+                   Y=Colors.yellow.shade300;
+                   R=Colors.red;
+                   B=Colors.blue;
                  selectB=false;
                  selectR=false;
                  print(selectY);
+                 });
+                 
                },
                child: Container(
                  height: 3.h,
                  width: 15.w,
-                 color: Colors.yellow,
+                 color: Y,
                ),
              ) ,
           ),
